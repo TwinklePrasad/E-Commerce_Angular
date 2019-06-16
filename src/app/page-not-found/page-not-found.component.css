@@ -1,0 +1,14 @@
+*{
+    padding: 20px;
+    text-align: center;
+    color: white;
+    /* background-color: crimson; */
+}
+.page-not-text{
+    font-size: 80px;
+    text-shadow: 2px 2px 30px red;
+}
+.page-not-code{
+    font-size: 200px;
+    text-shadow: 2px 2px 5px red;
+}

@@ -1,0 +1,72 @@
+     
+  <!-- DataTables Example -->
+  <div class="card mb-3">
+    <div class="card-header text-center shadow-sm">
+        <h4>product List</h4>
+      </div>
+    <div class="card-body">
+        <div *ngIf="status" class="row">
+            <div class="col-md-12">
+                <div  class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{message}}
+                    <button type="button" (click)="hideMessage()" class="close"   >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+
+                  </div>
+            </div>
+          </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
+          <thead>
+            <tr>
+              
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Category</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quality</th>
+              <th scope="col">code</th>
+              <th scope="col">Supllier</th>
+              <th scope="col">Image</th>
+              <th scope="col">Date/time</th>
+              <th scope="col">action</th> 
+              </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Category</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quality</th>
+              <th scope="col">code</th>
+              <th scope="col">Supllier</th>
+              <th scope="col">Image</th>
+              <th scope="col">Date/time</th>
+              <th scope="col">action</th>
+            </tr>
+          </tfoot>
+          <tbody>
+            <tr *ngFor=" let product of products"> 
+              <th scope="row">{{product._id}}</th>
+              <td>{{product.name}}</td>
+              <td>{{product.category}}</td>
+              <td>{{product.price}}</td>
+              <td>{{product.quality}}</td>
+              <td>{{product.code}}</td>
+              <td>{{product.supplier}}</td>
+              <td><img src="http://localhost:3000/myimages/{{product.image}}" width=50 height=50/></td>
+      <td>{{product.cur_date|date}}</td>
+              <td>
+                  <a routerLink="../editproduct/{{product._id}}" class="btn btn-raised btn-info">Edit</a>
+
+                  <button type="button" (click)="deleteProduct(product._id)" class="btn btn-raised btn-danger ml-2">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+ </div>  

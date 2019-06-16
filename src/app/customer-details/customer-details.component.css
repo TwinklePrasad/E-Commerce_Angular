@@ -1,0 +1,15 @@
+ol li{
+    margin: 10px;
+     /* background-color: rgb(32, 138, 80);  */
+    width: 45%;
+    font-size: 20px;
+    border-radius: 0px 5px 5px 0px;
+    
+}
+ol li strong{
+    margin: 5px;
+    padding: 5px;
+}
+ol li span{
+    color: rgba(223, 7, 7, 0.801);
+}
